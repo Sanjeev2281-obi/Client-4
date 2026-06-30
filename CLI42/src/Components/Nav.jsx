@@ -17,13 +17,13 @@ export default function Nav() {
       <div className="flex items-center justify-between font-poppins">
         {/* Brand Logo */}
         <div className="flex items-center gap-1.5 cursor-pointer">
-          <span className="text-xl font-black tracking-tighter text-gray-500 font-sans ">
+          <span className="text-xl font-black tracking-tighter text-gray-300 font-sans ">
             CRAFT
           </span>
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-[14px] font-medium text-gray-500">
+        <nav className="hidden md:flex items-center gap-8 text-[14px] font-medium text-gray-400">
           <a href="#product" className="hover:text-white transition-colors">Product</a>
           <a href="#imagine" className="hover:text-white transition-colors">Imagine</a>
           <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>

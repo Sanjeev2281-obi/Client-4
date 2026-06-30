@@ -10,7 +10,8 @@ import {
     Minus
 } from 'lucide-react';
 import Nav from '../Components/Nav'
-
+import b1 from '../assets/b1.avif'
+import b2 from '../assets/b2.png'
 export default function Home() {
     const [openFaq, setOpenFaq] = React.useState(null);
 
@@ -28,9 +29,9 @@ export default function Home() {
                 {/* Background Image with Dark Vignette Overlay */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1920&q=80"
+                        src={b2}
                         alt="Hero Background"
-                        className="h-full w-full object-cover object-center opacity-40 transform scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
+                        className="h-full w-full object-cover object-center opacity- transform scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
                     <div className="absolute inset-0 bg-radial-vignette" />
