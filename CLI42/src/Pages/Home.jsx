@@ -6,7 +6,7 @@ import {
     Minus
 } from 'lucide-react';
 import Nav from '../Components/Nav'
-import b2 from '../assets/b2.png'
+import b3 from '../assets/b3.webp'
 export default function Home() {
     const [openFaq, setOpenFaq] = React.useState(null);
 
@@ -22,15 +22,23 @@ export default function Home() {
             {/* 2. HERO SECTION */}
             <section id="home" className="relative flex min-h-[90vh] items-center justify-center bg-gray-950 px-4 pt-24 pb-16 overflow-hidden">
                 {/* Background Image with Dark Vignette Overlay */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src={b2}
-                        alt="Hero Background"
-                        className="h-full w-full object-cover object-center opacity- transform scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/40 to-transparent" />
-                    <div className="absolute inset-0 bg-radial-vignette" />
-                </div>
+                <div className="absolute inset-0 z-0 overflow-hidden">
+   <img
+    src={b3}
+    alt="Hero Background"
+   
+    className="h-full w-full object-cover object-[center_30%] opacity-80 transform scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
+/>
+    {/* Combined & improved gradient overlays */}
+    {/* 1. Linear gradient to fade out the bottom */}
+    <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent" />
+    
+    {/* 2. Horizontal gradient for desktop to fade out the sides into the dark background */}
+    <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-gray-950 via-transparent to-gray-950" />
+    
+    {/* 3. Your custom radial vignette */}
+    <div className="absolute inset-0 bg-radial-vignette opacity-60" />
+</div>
 
                 {/* Hero Content */}
                 <div className="relative z-10 max-w-4xl text-center text-white px-4">
