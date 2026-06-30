@@ -2,15 +2,10 @@
 import React from 'react';
 import {
     ArrowRight,
-    X,
-    CheckCircle2,
-    ChevronDown,
-    Menu,
     Plus,
     Minus
 } from 'lucide-react';
 import Nav from '../Components/Nav'
-import b1 from '../assets/b1.avif'
 import b2 from '../assets/b2.png'
 export default function Home() {
     const [openFaq, setOpenFaq] = React.useState(null);
@@ -33,16 +28,16 @@ export default function Home() {
                         alt="Hero Background"
                         className="h-full w-full object-cover object-center opacity- transform scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/40 to-transparent" />
                     <div className="absolute inset-0 bg-radial-vignette" />
                 </div>
 
                 {/* Hero Content */}
                 <div className="relative z-10 max-w-4xl text-center text-white px-4">
                     <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl uppercase">
-                        Music Lessons In <br />
-                        <span className="bg-gradient-to-r from-teal-400 to-emerald-300 bg-clip-text text-transparent">
-                            Lewis Center
+                        Carnatic music  <br />
+                        <span className="bg-linear-to-r from-teal-400 to-emerald-300 bg-clip-text text-transparent">
+                            lessons in Dublin
                         </span>
                     </h1>
 
@@ -98,7 +93,7 @@ export default function Home() {
 
                         {/* Card 1: Piano */}
                         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                            <div className="aspect-[16/10] overflow-hidden bg-gray-200">
+                            <div className="aspect-16/10 overflow-hidden bg-gray-200">
                                 <img
                                     src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80"
                                     alt="Piano Lessons"
@@ -120,7 +115,7 @@ export default function Home() {
 
                         {/* Card 2: Guitar */}
                         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                            <div className="aspect-[16/10] overflow-hidden bg-gray-200">
+                            <div className="aspect-16/10 overflow-hidden bg-gray-200">
                                 <img
                                     src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80"
                                     alt="Guitar Lessons"
@@ -142,7 +137,7 @@ export default function Home() {
 
                         {/* Card 3: Voice */}
                         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                            <div className="aspect-[16/10] overflow-hidden bg-gray-200">
+                            <div className="aspect-16/10 overflow-hidden bg-gray-200">
                                 <img
                                     src="https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&w=800&q=80"
                                     alt="Voice Lessons"
@@ -164,7 +159,7 @@ export default function Home() {
 
                         {/* Card 4: Violin */}
                         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                            <div className="aspect-[16/10] overflow-hidden bg-gray-200">
+                            <div className="aspect-16/10 overflow-hidden bg-gray-200">
                                 <img
                                     src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80"
                                     alt="Violin Lessons"
@@ -397,7 +392,7 @@ export default function Home() {
                                     <span className="text-sm font-bold tracking-wide text-gray-900 uppercase pr-4">
                                         {faq.q}
                                     </span>
-                                    <span className="text-teal-600 flex-shrink-0 bg-teal-50 p-1.5 rounded-full">
+                                    <span className="text-teal-600 shrink-0 bg-teal-50 p-1.5 rounded-full">
                                         {openFaq === index ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                                     </span>
                                 </button>

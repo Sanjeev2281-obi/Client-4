@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 
 export default function Nav() {
@@ -43,7 +43,7 @@ export default function Nav() {
             onClick={() => setIsOpen(!isOpen)} 
             className="block md:hidden text-white focus:outline-none p-1"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5 text-gray-300" />}
           </button>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function Nav() {
       {/* EXPANDED MOBILE DRAWER */}
       <div 
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-          isOpen ? 'max-h-[450px] opacity-100 mt-5' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-112.5 opacity-100 mt-5' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="flex flex-col text-[14px] font-medium text-neutral-300">
