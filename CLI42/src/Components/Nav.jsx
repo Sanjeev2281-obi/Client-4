@@ -160,9 +160,11 @@ export default function Nav() {
 
         {/* Action Buttons Right Side */}
         <div className="flex items-center gap-3">
-          {/* <button className="rounded-xl bg-white px-5 py-2.5 text-[14px] font-semibold text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-neutral-200 hover:shadow-md active:scale-95">
-            Try Craft Free
-          </button> */}
+          <a href="#about">
+          <button className="hidden sm:block rounded-xl bg-white px-5 py-2.5 text-[14px] font-semibold text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-neutral-200 hover:shadow-md active:scale-95">
+            Book a Trial Lesson
+          </button>
+          </a>
 
           {/* Mobile Menu Icon Toggle */}
           <button
