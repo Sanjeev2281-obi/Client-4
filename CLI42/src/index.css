@@ -8,3 +8,153 @@ html {
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
+
+@keyframes slideReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(120%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+
+  0% {
+    background-position: -200%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
+
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+
+}
+
+@layer utilities {
+  /* 1. Cinematic Background Pan & Scale */
+  @keyframes hero-pan {
+    0% {
+      transform: scale(1.08) translateX(-1.5%) translateY(0);
+    }
+    50% {
+      transform: scale(1.14) translateX(1.5%) translateY(-1%);
+    }
+    100% {
+      transform: scale(1.08) translateX(-1.5%) translateY(0);
+    }
+  }
+
+  /* 2. Floating Ambient Light Source 1 */
+  @keyframes floatLight {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(60px, -40px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* 2. Floating Ambient Light Source 2 */
+  @keyframes floatLight2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-50px, 30px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* 3. Text Clip Mask Upward Reveal */
+  @keyframes slideReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(110%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 4. Luxury Diamond Shine Shimmer */
+  @keyframes shine {
+    0% { background-position: -200%; }
+    100% { background-position: 200%; }
+  }
+
+  /* 7. Floating Musical Node Particles */
+  @keyframes float {
+    0% {
+      transform: translateY(20px) scale(0.8);
+      opacity: 0;
+    }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.3; }
+    100% {
+      transform: translateY(-75vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  /* 8. Luxury Mouse Scroll Indicator track */
+  @keyframes scrollMouse {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    20% { opacity: 1; }
+    60% {
+      transform: translateY(14px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+
+  /* 9. Premium Backplate Gradient Cycle */
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* 10. Secondary Section Block Cascade */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      /* Moves exactly half the width of the duplicated items array track */
+      transform: translateX(-50%);
+    }
+  }
+}

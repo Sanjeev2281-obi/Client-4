@@ -941,7 +941,7 @@ import Nav from '../Components/Nav';
 import b3 from '../assets/b3.webp';
 import Footer from '../Components/Footer';
 import BookLessonModal from '../Components/BookLessonModal';
-
+import Hero from '../Components/Hero'
 function Reveal({ children, delay = 0, className = '' }) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -993,8 +993,8 @@ export default function Home() {
             {/* 1. FLOATING NAV BAR */}
             <Nav />
 
-            {/* 2. HERO SECTION */}
-            <section id="home" className="relative flex min-h-[95vh] items-center justify-center bg-gray-950 px-4 pt-28 pb-20 overflow-hidden">
+            
+             {/* <section id="home" className="relative flex min-h-[95vh] items-center justify-center bg-gray-950 px-4 pt-28 pb-20 overflow-hidden">
                 <div className="absolute inset-0 z-0 overflow-hidden">
                     <img
                         src={b3}
@@ -1006,11 +1006,12 @@ export default function Home() {
                     <div className="absolute inset-0 bg-radial-vignette opacity-60" />
                 </div>
 
-                {/* Hero Content with Entrance Animations */}
+                
                 <div className="relative z-10 max-w-4xl text-center text-white px-4 font-poppins transform translate-y-0 animate-[fade-in-up_1s_ease-out]">
-                    <h1 className="text-[34px] sm:text-[46px] lg:text-[56px] font-bold tracking-tight uppercase leading-[1.12]">
+                    <h1 className="animate-[slideReveal_1s_cubic-bezier(.19,1,.22,1)] text-[34px] sm:text-[46px] lg:text-[56px] font-bold tracking-tight uppercase leading-[1.12]">
                         Carnatic music <br />
-                        <span className="bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent drop-shadow-sm">
+                        <span className="animate-[slideReveal_1.4s_cubic-bezier(.19,1,.22,1)] bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent drop-shadow-sm"
+>
                             lessons in Dublin
                         </span>
                     </h1>
@@ -1034,12 +1035,13 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Smooth Scroll Indicator */}
+               
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-gray-500 animate-bounce">
                     <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll</span>
                     <ArrowRight className="w-4 h-4 rotate-90" />
                 </div>
-            </section>
+            </section>  */}
+            <Hero/>
 
             {/* 3. VALUE PROPOSITION SECTION */}
             <section id="about" className="bg-white py-24 sm:py-28 px-4 sm:px-6 lg:px-8 font-poppins relative">
@@ -1422,51 +1424,88 @@ export default function Home() {
                     </div>
 
                     {/* Sub-grid 2: Parent & Student Testimonials */}
-                    <div>
-                        <Reveal>
-                            <h3 className="text-[12px] font-semibold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-200 pb-2">
-                                What Our Students Say
-                            </h3>
-                        </Reveal>
-                        <div className="grid gap-6 md:grid-cols-3 text-left">
-                            {[
-                                {
-                                    quote: '"HemaDevi teacher handles my 7-year-old daughter with immense patience. The way she breaks down the basic rhythms and pitch culture makes classical singing thoroughly exciting for kids!"',
-                                    name: 'Priya Balakrishnan',
-                                    role: 'Parent (Dublin 15)',
-                                },
-                                {
-                                    quote: '"Having stopped my Carnatic training years ago, I was anxious about reviving my lessons here in Dublin. Her deep expertise and focus on voice modulation built my confidence back rapidly."',
-                                    name: 'Srinivas Raghavan',
-                                    role: 'Adult Student (Rathmines)',
-                                },
-                                {
-                                    quote: '"The hybrid setup fits my college timeline perfectly. The pitch tracking tools and structured raga reference frameworks make home practice easy between sessions."',
-                                    name: 'Ananya Nair',
-                                    role: 'Teen Batch (Dublin 6)',
-                                },
-                            ].map(({ quote, name, role }, i) => (
-                                <Reveal delay={i * 100} key={name}>
-                                    <div className="bg-white p-6 rounded-2xl border border-gray-200/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between h-full">
-                                        <div className="space-y-3">
-                                            <div className="flex gap-1 text-amber-400">
-                                                {"★★★★★".split("").map((char, j) => (
-                                                    <span key={j} className="text-[14px]">★</span>
-                                                ))}
-                                            </div>
-                                            <p className="text-[14px] text-gray-600 leading-relaxed italic">
-                                                {quote}
-                                            </p>
-                                        </div>
-                                        <div className="mt-4 pt-3 border-t border-gray-100">
-                                            <h5 className="text-[13px] font-semibold text-gray-900 uppercase">{name}</h5>
-                                            <p className="text-[12px] text-gray-400 font-medium">{role}</p>
-                                        </div>
+                     <div>
+    <Reveal>
+        <h3 className="text-[12px] font-semibold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-200 pb-2">
+            What Our Students Say
+        </h3>
+    </Reveal>
+    
+    {/* Outer container: Sets up normal grid for desktop, but a hidden-overflow marquee track for mobile */}
+    <div className="relative w-full overflow-hidden md:overflow-visible">
+        <div className="flex gap-6 w-max md:w-full animate-[marquee_25s_linear_infinite] md:animate-none md:grid md:grid-cols-3 text-left pb-4">
+            
+            {/* Duplicating the array items concatenation allows a perfectly seamless infinite visual loop on mobile screens */}
+            {[
+                {
+                    quote: '"HemaDevi teacher handles my 7-year-old daughter with immense patience. The way she breaks down the basic rhythms and pitch culture makes classical singing thoroughly exciting for kids!"',
+                    name: 'Priya Balakrishnan',
+                    role: 'Parent (Dublin 15)',
+                },
+                {
+                    quote: '"Having stopped my Carnatic training years ago, I was anxious about reviving my lessons here in Dublin. Her deep expertise and focus on voice modulation built my confidence back rapidly."',
+                    name: 'Srinivas Raghavan',
+                    role: 'Adult Student (Rathmines)',
+                },
+                {
+                    quote: '"The hybrid setup fits my college timeline perfectly. The pitch tracking tools and structured raga reference frameworks make home practice easy between sessions."',
+                    name: 'Ananya Nair',
+                    role: 'Teen Batch (Dublin 6)',
+                },
+            ].concat([
+                // Duplicate items for the endless loop effect on mobile viewports
+                {
+                    quote: '"HemaDevi teacher handles my 7-year-old daughter with immense patience. The way she breaks down the basic rhythms and pitch culture makes classical singing thoroughly exciting for kids!"',
+                    name: 'Priya Balakrishnan ',
+                    role: 'Parent (Dublin 15)',
+                },
+                {
+                    quote: '"Having stopped my Carnatic training years ago, I was anxious about reviving my lessons here in Dublin. Her deep expertise and focus on voice modulation built my confidence back rapidly."',
+                    name: 'Srinivas Raghavan ',
+                    role: 'Adult Student (Rathmines)',
+                },
+                {
+                    quote: '"The hybrid setup fits my college timeline perfectly. The pitch tracking tools and structured raga reference frameworks make home practice easy between sessions."',
+                    name: 'Ananya Nair ',
+                    role: 'Teen Batch (Dublin 6)',
+                },
+            ]).map(({ quote, name, role }, i) => {
+                // Determine layout rules: hides items 4-6 on desktop screen variants to preserve clean 3-column layout grids
+                const isDuplicate = i >= 3;
+                
+                return (
+                    <div 
+                        key={`${name}-${i}`} 
+                        className={`w-[290px] sm:w-[340px] md:w-full shrink-0 ${isDuplicate ? 'md:hidden' : ''}`}
+                    >
+                        <Reveal delay={(i % 3) * 100}>
+                            <div className="bg-white p-6 rounded-2xl border border-gray-200/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between h-full">
+                                <div className="space-y-3">
+                                    <div className="flex gap-1 text-amber-400">
+                                        {"★★★★★".split("").map((char, j) => (
+                                            <span key={j} className="text-[14px]">★</span>
+                                        ))}
                                     </div>
-                                </Reveal>
-                            ))}
-                        </div>
+                                    <p className="text-[14px] text-gray-600 leading-relaxed italic">
+                                        {quote}
+                                    </p>
+                                </div>
+                                <div className="mt-4 pt-3 border-t border-gray-100">
+                                    <h5 className="text-[13px] font-semibold text-gray-900 uppercase">{name.trim()}</h5>
+                                    <p className="text-[12px] text-gray-400 font-medium">{role}</p>
+                                </div>
+                            </div>
+                        </Reveal>
                     </div>
+                );
+            })}
+        </div> 
+        
+        {/* Adds premium faded soft gradients on left/right mobile edges so items blend away cleanly */}
+        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#F9FAFB] to-transparent pointer-events-none md:hidden" />
+        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#F9FAFB] to-transparent pointer-events-none md:hidden" />
+    </div>
+</div>
 
                 </div>
             </section>
