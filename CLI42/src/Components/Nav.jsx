@@ -202,12 +202,12 @@ export default function Nav() {
 
           {/* Stacked Interactive Buttons Footer */}
           <div className="mt-5 flex flex-col gap-2.5">
+            <a href="#about">
             <button className="w-full rounded-xl bg-white py-3 text-[15px] font-semibold text-black shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-200 active:scale-95">
-              Download
+             Book a Trial Lesson
             </button>
-            <button className="w-full text-center py-2 text-[14px] font-medium text-neutral-400 transition-colors duration-300 hover:text-white">
-              Log in
-            </button>
+            </a>
+           
           </div>
         </div>
       </div>
