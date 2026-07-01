@@ -158,3 +158,27 @@ html {
     }
   }
 }
+
+@layer utilities {
+  /* Dynamic upward drift + artistic swaying loop for music notes */
+  @keyframes floatNote {
+    0% {
+      transform: translateY(40px) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.35;
+    }
+    50% {
+      transform: translateY(-40vh) translateX(25px) rotate(15deg);
+      opacity: 0.25;
+    }
+    85% {
+      opacity: 0.15;
+    }
+    100% {
+      transform: translateY(-85vh) translateX(-15px) rotate(-10deg);
+      opacity: 0;
+    }
+  }
+}
