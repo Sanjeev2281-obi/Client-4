@@ -1086,10 +1086,7 @@ export default function Home() {
                     Book a Trial Lesson
                 </button>
             </div>
-            <BookLessonModal 
-                isOpen={isModalOpen} 
-                onClose={() => setIsModalOpen(false)} // Closes the modal
-            />
+            
                     </div>
                 </Reveal>
             </section>
@@ -1536,7 +1533,10 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
+            <BookLessonModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} // Closes the modal
+            />
             {/* 9. MODERN DARK FOOTER */}
             <Footer />
         </div>
