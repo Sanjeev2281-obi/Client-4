@@ -118,8 +118,8 @@ export default function Nav() {
   }, []);
 
   const navLinks = [
-    { href: '#product', label: 'Product' },
-    { href: '#imagine', label: 'Imagine' },
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About Us' },
     { href: '#pricing', label: 'Pricing' },
     { href: '#learn', label: 'Learn' },
     { href: '#download', label: 'Download' },

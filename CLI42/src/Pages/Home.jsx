@@ -940,12 +940,8 @@ import {
 import Nav from '../Components/Nav';
 import b3 from '../assets/b3.webp';
 import Footer from '../Components/Footer';
+import BookLessonModal from '../Components/BookLessonModal';
 
-/* -----------------------------------------------------------
-   Lightweight scroll-reveal wrapper (IntersectionObserver only,
-   no animation libraries) — used for "fade-up on scroll" and
-   staggered card reveals throughout the page.
------------------------------------------------------------- */
 function Reveal({ children, delay = 0, className = '' }) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -982,7 +978,7 @@ function Reveal({ children, delay = 0, className = '' }) {
 export default function Home() {
     const [openFaq, setOpenFaq] = React.useState(null);
     const [activeCard, setActiveCard] = React.useState(null);
-
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
     const toggleFaq = (index) => {
         setOpenFaq(openFaq === index ? null : index);
     };
@@ -1082,9 +1078,18 @@ export default function Home() {
                     </div>
 
                     <div className="mt-10">
-                        <button className="w-full sm:w-auto rounded-xl bg-teal-600 px-10 py-4 text-[15px] font-semibold tracking-wider text-white shadow-md transition-all duration-300 ease-out hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.02] active:scale-95 uppercase">
-                            Book a Trial Lesson
-                        </button>
+                        <div className="mt-10">
+                <button 
+                    onClick={() => setIsModalOpen(true)} // Opens the modal
+                    className="w-full sm:w-auto rounded-xl bg-teal-600 px-10 py-4 text-[15px] font-semibold tracking-wider text-white shadow-md transition-all duration-300 ease-out hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.02] active:scale-95 uppercase"
+                >
+                    Book a Trial Lesson
+                </button>
+            </div>
+            <BookLessonModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} // Closes the modal
+            />
                     </div>
                 </Reveal>
             </section>
